@@ -140,5 +140,5 @@ def print_osc99(
 ) -> None:
     with open("/dev/tty", "w") as tty:
         tty.write(
-            f"\x1b]99;i=1:d=1:p=title;{title}\x1b\\ \x1b]99;i=1:d=1:p=body;{body}\x1b\\"
+            f"\x1b]99;i=1:d=0:p=title;{title}\x1b\\ \x1b]99;i=1:d=1:p=body;{body}\x1b\\"
         )
