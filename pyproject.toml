@@ -1,10 +1,10 @@
 [tool.basedpyright]
 include = ["."]
-exclude = ["**/__pycache__", "stubs"]
-stubPath = "stubs"
+exclude = ["**/__pycache__"]
+ignore = ["weechat.pyi"]
 
 reportMissingImports = true
-reportMissingTypeStubs = false
+reportMissingTypeStubs = true
 reportUnusedCallResult = false
 
 pythonVersion = "3.12"
