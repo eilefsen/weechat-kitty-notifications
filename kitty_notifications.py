@@ -138,7 +138,5 @@ def print_osc99(
     title: str,
     body: str,
 ) -> None:
-    weechat.command(
-        "",
-        "/print -stdout " + f"\x1b]99;i=1:d=1:p=body;{body}\x1b\\",
-    )
+    with open("/dev/tty", "w") as tty:
+        tty.write(f"\x1b]99;i=1:d=1:p=body;{body}\x1b\\")
