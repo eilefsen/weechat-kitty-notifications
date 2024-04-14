@@ -1,0 +1,11 @@
+[tool.basedpyright]
+include = ["."]
+exclude = ["**/__pycache__", "stubs"]
+stubPath = "stubs"
+
+reportMissingImports = true
+reportMissingTypeStubs = false
+reportUnusedCallResult = false
+
+pythonVersion = "3.12"
+pythonPlatform = "MacOS"
