@@ -70,25 +70,25 @@ def notify(
 
     if channel in channel_allow_list:
         if weechat.config_get_plugin("show_message_text") == "on":
-            Notifier.notify(
+            print_osc99(
+                f"{prefix} {channel}",
                 message,
-                title="%s %s" % (prefix, channel),
             )
         else:
-            Notifier.notify(
-                "In %s by %s" % (channel, prefix),
-                title="Channel Activity",
+            print_osc99(
+                "Channel Activity",
+                f"In {channel} by {prefix}",
             )
     elif weechat.config_get_plugin("show_highlights") == "on" and int(highlight):
         if weechat.config_get_plugin("show_message_text") == "on":
-            Notifier.notify(
+            print_osc99(
+                f"{prefix} {channel}",
                 message,
-                title="%s %s" % (prefix, channel),
             )
         else:
-            Notifier.notify(
-                "In %s by %s" % (channel, prefix),
-                title="Highlighted Message",
+            print_osc99(
+                "Highlighted Message",
+                f"In {channel} by {prefix}",
             )
     elif (
         weechat.config_get_plugin("show_private_message") == "on"
@@ -96,13 +96,21 @@ def notify(
         and "notify_private" in tags
     ):
         if weechat.config_get_plugin("show_message_text") == "on":
-            Notifier.notify(
+            print_osc99(
+                f"{prefix} [private]",
                 message,
-                title="%s [private]" % prefix,
             )
         else:
-            Notifier.notify(
-                "From %s" % prefix,
-                title="Private Message",
+            print_osc99(
+                "Private Message",
+                f"From {prefix}",
             )
     return weechat.WEECHAT_RC_OK
+
+
+def print_osc99(
+    body: str,
+    title: str,
+) -> None:
+    print(f"\x1b]99;i=1:d=1:p=title;{title}\x1b\\")
+    print(f"\x1b]99;i=1:d=1:p=body;{body}\x1b\\")
