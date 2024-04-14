@@ -25,7 +25,6 @@
 # included under the MIT license (https://opensource.org/license/mit/)
 
 import datetime
-import sys
 import weechat
 
 
@@ -136,11 +135,10 @@ def notify(
 
 
 def print_osc99(
-    body: str,
     title: str,
+    body: str,
 ) -> None:
     weechat.command(
         "",
-        "/print -stdout "
-        + f"\x1b]99;i=1:d=1:p=title;{title}\x1b\\ \x1b]99;i=1:d=1:p=body;{body}\x1b\\",
+        "/print -stdout " + f"\x1b]99;i=1:d=1:p=body;{body}\x1b\\",
     )
