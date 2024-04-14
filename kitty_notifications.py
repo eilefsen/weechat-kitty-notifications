@@ -1,8 +1,34 @@
+# MIT License
+#
+# Copyright (c) Emma Eilefsen Glenna <emma@eilefsen.net> (https://eilefsen.net)
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+# of the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies
+# or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+# INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+# PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+# BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+# USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
+# ATTRIBUTIONS:
+# This script was made by modifying an older script referenced below
+# notifications_center (https://github.com/sindresorhus/weechat-notification-center)
+# Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
+# included under the MIT license (https://opensource.org/license/mit/)
+
 import datetime
 import weechat
 
 
-SCRIPT_NAME = "notification_center"
+SCRIPT_NAME = "kitty_notifications"
 SCRIPT_AUTHOR = "Emma Eilefsen Glenna <emma@eilefsen.net>"
 SCRIPT_VERSION = "1.0.0"
 SCRIPT_LICENSE = "MIT"
